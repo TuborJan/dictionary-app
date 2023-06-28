@@ -13,9 +13,14 @@ export default function Home() {
     const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
     if (word) {
-      axios.get(url).then((response) => {
-        dispatch(addDictionary(response.data[0]));
-      });
+      axios
+        .get(url)
+        .then((response) => {
+          dispatch(addDictionary(response.data[0]));
+        })
+        .catch((error) => {
+          throw new Error(error.message);
+        });
     }
   };
 

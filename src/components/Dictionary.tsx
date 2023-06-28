@@ -11,9 +11,16 @@ const Dictionary: React.FC<IDictionaryProps> = ({ word }) => {
   console.log(word);
 
   return (
-    <div>
-      {word.phonetics && audioURL ? <AudioWord audio={audioURL} /> : <></>}
-      <h1>{word.word}</h1>
+    <div className="w-full mt-10">
+      <div className="w-full flex justify-between items-center">
+        <div>
+          <h1 className="font-bold text-5xl">{word.word}</h1>
+          <p className="mt-4 font-medium text-xl text-[#a75fe0]">
+            {word.phonetic}
+          </p>
+        </div>
+        {audioURL ? <AudioWord audio={audioURL} /> : <></>}
+      </div>
     </div>
   );
 };

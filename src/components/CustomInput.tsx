@@ -9,6 +9,12 @@ interface ICustomInputProps {
 const CustomInput: React.FC<ICustomInputProps> = ({ hadleSubmit }) => {
   const [word, setWord] = useState("");
 
+  const handleKeyDownEvent = (keyCode: string) => {
+    if (keyCode === "Enter") {
+      hadleSubmit(word);
+    }
+  };
+
   return (
     <label className="w-full p-4 bg-[#f4f4f4] rounded-2xl relative flex items-center">
       <input
@@ -17,6 +23,7 @@ const CustomInput: React.FC<ICustomInputProps> = ({ hadleSubmit }) => {
         type="text"
         placeholder="Type the word"
         onChange={(e) => setWord(e.target.value.replace(/\d/g, ""))}
+        onKeyDown={(e) => handleKeyDownEvent(e.code)}
       />
       <svg
         onClick={() => hadleSubmit(word)}
