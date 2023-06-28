@@ -3,9 +3,9 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export type dictionary = {
   word: string;
   phonetic?: string;
-  phonetics?: Phonetic[];
+  phonetics: Phonetic[];
   origin?: string;
-  meanings?: Meaning[];
+  meanings: Meaning[];
   sourceUrls: string[];
 };
 

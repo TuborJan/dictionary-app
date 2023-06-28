@@ -10,7 +10,7 @@ const Meanings = ({ meanings }: IMeaningProps) => {
     <div className="mt-8">
       <h3 className="text-[#8f8f8f]">Meaning</h3>
       <ul className="list-disc list-inside pl-8">
-        {meanings.map((defenition: Definition, index: number) => (
+        {meanings.map((defenition, index) => (
           <li className="mt-4 marker:text-[#8940c2]" key={index}>
             {defenition.definition}
             {defenition.example && (

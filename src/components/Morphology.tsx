@@ -7,8 +7,6 @@ interface IVerbProps {
 }
 
 const Morphology = ({ morphology }: IVerbProps) => {
-  console.log(morphology.definitions[0].example);
-
   return (
     <div className="mt-10 text-xl font-light">
       <h2 className="flex justify-between items-center italic font-bold after:block after:w-[90%] after:h-px after:bg-[#eaeaea]">
