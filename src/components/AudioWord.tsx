@@ -1,6 +1,18 @@
-const AudioWord = () => {
+interface IAudioWordProps {
+  audio: string;
+}
+
+const AudioWord: React.FC<IAudioWordProps> = ({ audio }) => {
+  const handlePlayAudio = () => {
+    const wordAudio = new Audio(audio);
+    wordAudio.play();
+  };
+
   return (
-    <button className="w-16 h-16 rounded-full bg-[#e9d0fa]">
+    <button
+      className="w-16 h-16 rounded-full bg-[#e9d0fa]"
+      onClick={() => handlePlayAudio()}
+    >
       <svg
         className="w-full h-full"
         viewBox="0 0 24 24"
