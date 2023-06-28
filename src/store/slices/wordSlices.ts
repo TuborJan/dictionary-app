@@ -6,6 +6,7 @@ export type dictionary = {
   phonetics?: Phonetic[];
   origin?: string;
   meanings?: Meaning[];
+  sourceUrls: string[];
 };
 
 export type Phonetic = {
@@ -22,9 +23,7 @@ export type Meaning = {
 
 export type Definition = {
   definition: string;
-  example: string;
-  synonyms: any[];
-  antonyms: any[];
+  example?: string;
 };
 
 const initialState = {

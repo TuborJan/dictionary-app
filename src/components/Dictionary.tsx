@@ -1,5 +1,5 @@
 import { dictionary } from "@/store/slices/wordSlices";
-import Meanings from "./Meanings";
+import Morphology from "./Morphology";
 import Phonetic from "./Phonetic";
 
 interface IDictionaryProps {
@@ -13,7 +13,7 @@ const Dictionary = ({ word }: IDictionaryProps) => {
     <div className="w-full mt-10">
       <Phonetic word={word} />
       {word.meanings?.map((meaning) => (
-        <Meanings key={meaning.partOfSpeech} meaning={meaning} />
+        <Morphology key={meaning.partOfSpeech} morphology={meaning} />
       ))}
     </div>
   );

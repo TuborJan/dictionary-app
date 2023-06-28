@@ -1,37 +1,24 @@
-import { Meaning } from "@/store/slices/wordSlices";
+import { Definition } from "@/store/slices/wordSlices";
+import React from "react";
 
-interface IVerbProps {
-  meaning: Meaning;
+interface IMeaningProps {
+  meanings: Definition[];
 }
 
-const Meanings = ({ meaning }: IVerbProps) => {
-  console.log();
-
+const Meanings = ({ meanings }: IMeaningProps) => {
   return (
-    <div className="mt-10 text-xl font-light">
-      <h2 className="flex justify-between items-center italic font-bold after:block after:w-[90%] after:h-px after:bg-[#eaeaea]">
-        {meaning.partOfSpeech}
-      </h2>
-      {meaning.synonyms && meaning.synonyms?.length !== 0 && (
-        <div className="flex gap-2 mt-8 ">
-          <h3 className="mr-8">Synonyms</h3>
-          {meaning.synonyms.map((synonym: string) => (
-            <p key={synonym} className="text-[#a75fe0]">
-              {synonym}
-            </p>
-          ))}
-        </div>
-      )}
-      {meaning.antonyms && meaning.antonyms?.length !== 0 && (
-        <div className="flex gap-2 mt-8 ">
-          <h3 className="mr-8">Antonyms</h3>
-          {meaning.antonyms.map((antonym: string) => (
-            <p key={antonym} className="text-[#a75fe0]">
-              {antonym}
-            </p>
-          ))}
-        </div>
-      )}
+    <div className="mt-8">
+      <h3 className="text-[#8f8f8f]">Meaning</h3>
+      <ul className="list-disc list-inside pl-8">
+        {meanings.map((defenition: Definition, index: number) => (
+          <li className="mt-4 marker:text-[#8940c2]" key={index}>
+            {defenition.definition}
+            {defenition.example && (
+              <p className="mt-3 text-[#8f8f8f]">"{defenition.example}"</p>
+            )}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
