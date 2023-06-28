@@ -2,7 +2,7 @@ interface IAudioWordProps {
   audio: string;
 }
 
-const AudioWord: React.FC<IAudioWordProps> = ({ audio }) => {
+const AudioWord = ({ audio }: IAudioWordProps) => {
   const handlePlayAudio = () => {
     const wordAudio = new Audio(audio);
     wordAudio.play();

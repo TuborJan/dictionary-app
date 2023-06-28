@@ -1,26 +1,20 @@
-import AudioWord from "@/components/AudioWord";
-import { findAudio } from "@/functions/findAudion";
 import { dictionary } from "@/store/slices/wordSlices";
+import Meanings from "./Meanings";
+import Phonetic from "./Phonetic";
 
 interface IDictionaryProps {
   word: dictionary;
 }
 
-const Dictionary: React.FC<IDictionaryProps> = ({ word }) => {
-  const audioURL = findAudio(word);
+const Dictionary = ({ word }: IDictionaryProps) => {
   console.log(word);
 
   return (
     <div className="w-full mt-10">
-      <div className="w-full flex justify-between items-center">
-        <div>
-          <h1 className="font-bold text-5xl">{word.word}</h1>
-          <p className="mt-4 font-medium text-xl text-[#a75fe0]">
-            {word.phonetic}
-          </p>
-        </div>
-        {audioURL ? <AudioWord audio={audioURL} /> : <></>}
-      </div>
+      <Phonetic word={word} />
+      {word.meanings?.map((meaning) => (
+        <Meanings key={meaning.partOfSpeech} meaning={meaning} />
+      ))}
     </div>
   );
 };

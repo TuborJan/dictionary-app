@@ -8,17 +8,19 @@ export type dictionary = {
   meanings?: Meaning[];
 };
 
-type Phonetic = {
+export type Phonetic = {
   text: string;
   audio?: string;
 };
 
-type Meaning = {
+export type Meaning = {
+  antonyms?: string[];
   partOfSpeech: string;
   definitions: Definition[];
+  synonyms?: string[];
 };
 
-type Definition = {
+export type Definition = {
   definition: string;
   example: string;
   synonyms: any[];

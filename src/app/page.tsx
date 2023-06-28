@@ -19,7 +19,7 @@ export default function Home() {
           dispatch(addDictionary(response.data[0]));
         })
         .catch((error) => {
-          throw new Error(error.message);
+          alert(`Enter word in English: ${error.message}`);
         });
     }
   };
@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <main className="flex max-w-3xl min-h-screen m-auto p-5 flex-col items-center ">
       <CustomInput hadleSubmit={hadleSubmit} />
-      {word && <Dictionary word={word} />}
+      {word.word !== "" ? <Dictionary word={word} /> : <></>}
     </main>
   );
 }
