@@ -7,11 +7,11 @@ import Header from "@/components/Header";
 
 export function ReduxProvider({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider attribute="class">
-      <Provider store={store}>
+    <Provider store={store}>
+      <ThemeProvider attribute="class">
         <Header />
         {children}
-      </Provider>
-    </ThemeProvider>
+      </ThemeProvider>
+    </Provider>
   );
 }

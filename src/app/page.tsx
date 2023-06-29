@@ -36,7 +36,9 @@ export default function Home() {
     <main className="flex max-w-3xl min-h-screen m-auto p-5 pt-10 flex-col items-center">
       <CustomInput hadleSubmit={hadleSubmit} />
       {loading ? (
-        "Loading..."
+        <div className="mt-20">
+          <h1 className="font-bold text-2xl">Loading...</h1>
+        </div>
       ) : word.word !== "" ? (
         <Dictionary word={word} />
       ) : (
