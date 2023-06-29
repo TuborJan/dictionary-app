@@ -8,7 +8,7 @@ const ThemeToggler = () => {
 
   useEffect(() => {
     toggle ? setTheme("dark") : setTheme("light");
-  }, [toggle]);
+  }, [toggle, setTheme]);
 
   useEffect(() => {
     setMounted(true);
