@@ -16,7 +16,7 @@ const CustomInput: React.FC<ICustomInputProps> = ({ hadleSubmit }) => {
   };
 
   return (
-    <label className="w-full p-4 bg-[#f4f4f4] rounded-2xl relative flex items-center">
+    <label className="w-full p-4 dark:bg-[#1f1f1f] bg-[#f4f4f4] rounded-2xl relative flex items-center">
       <input
         className="w-full pr-10 font-bold bg-inherit focus:outline-none"
         value={word}

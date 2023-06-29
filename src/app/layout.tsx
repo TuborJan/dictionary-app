@@ -2,7 +2,7 @@ import { ReduxProvider } from "@/store/reduxProvider";
 import "./globals.css";
 import { PT_Serif } from "next/font/google";
 
-const inter = PT_Serif({ weight: "400", subsets: ["latin"] });
+const serif = PT_Serif({ weight: "400", subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={serif.className}>
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
